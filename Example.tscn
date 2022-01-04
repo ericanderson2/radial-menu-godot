@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Example.gd" type="Script" id=1]
+
+[node name="Example" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1028.0
+margin_bottom = 601.0
+color = Color( 0.27451, 0.32549, 0.431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 415.513
+margin_top = 16.6205
+margin_right = 600.513
+margin_bottom = 30.6205
+text = "RadialMenu by Eric Anderson"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateButton" type="Button" parent="."]
+margin_left = 21.0
+margin_top = 13.0
+margin_right = 188.0
+margin_bottom = 50.0
+text = "Create RadialMenu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateInstructions" type="Label" parent="."]
+margin_left = 23.3017
+margin_top = 58.8647
+margin_right = 206.302
+margin_bottom = 95.8647
+text = "Enter menu options below on separate lines"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 22.0
+margin_top = 103.95
+margin_right = 198.0
+margin_bottom = 311.95
+text = "item1
+item2
+item3
+item4
+item5
+item6"
+show_line_numbers = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Output" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 326.0
+margin_right = 135.0
+margin_bottom = 340.0
+text = "Option selected: "
+
+[node name="MenuInstructions" type="Label" parent="."]
+margin_left = 275.9
+margin_top = 567.313
+margin_right = 777.9
+margin_bottom = 581.313
+text = "Use the mouse to select an option. To close the menu, click outside the circle"
+[connection signal="pressed" from="CreateButton" to="." method="_on_CreateButton_pressed"]
