@@ -33,7 +33,7 @@ var slice_pop_speed: float = 100.0
 var detail: int = 200
 # the center of the menu (screen coordinates)
 # default value: center of screen
-var center: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height")) / 2
+var center: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height")) / 2 setget set_center
 # whether or not to use antialiasing in draw commands
 # default value: true
 var antialiased: bool = true
@@ -105,6 +105,8 @@ func _init(passed_slices: Array):
 	title_label.rect_min_size = Vector2((menu_radius - menu_width) * 1.8, (menu_radius - menu_width) * 1.8)
 	title_label.rect_position = center - Vector2(0, 8) # adjust as necessary, needs to be brought up by 1/2 the font height to be centered
 	title_label.text = title
+	if (font != null):
+		title_label.set("custom_fonts/font", font)
 	add_child(title_label)
 	
 	# create option labels
@@ -201,3 +203,7 @@ func _input(event):
 func set_title(new_title: String):
 	title = new_title
 	title_label.text = title
+
+func set_center(new_center: Vector2):
+	center = new_center
+	title_label.rect_position = center - Vector2(0, 8)
