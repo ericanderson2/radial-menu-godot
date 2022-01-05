@@ -1,6 +1,8 @@
 # radial-menu-godot
 This is a Radial Menu class for the Godot game engine, written for my project [Paramnesia](https://github.com/ericanderson2/Paramnesia). Feel free to use this code for your own projects.
 
+![example menu](https://github.com/ericanderson2/radial-menu-godot/blob/main/example_menu.png)
+
 The menu is rendered using Godot's `_draw()` function. It is customizable by default through global variables, but you may need to tweak some code to get it looking the way you want. The code is heavily commented, so it should be easy to understand.
 
 ## How to use
